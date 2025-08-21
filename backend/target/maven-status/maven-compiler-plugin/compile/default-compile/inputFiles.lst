@@ -1,0 +1,12 @@
+/root/cursor-mcp-plan1/backend/src/main/java/com/yumanus/Application.java
+/root/cursor-mcp-plan1/backend/src/main/java/com/yumanus/agent/PlannerService.java
+/root/cursor-mcp-plan1/backend/src/main/java/com/yumanus/amap/RouteController.java
+/root/cursor-mcp-plan1/backend/src/main/java/com/yumanus/api/DraftController.java
+/root/cursor-mcp-plan1/backend/src/main/java/com/yumanus/api/PlanController.java
+/root/cursor-mcp-plan1/backend/src/main/java/com/yumanus/api/QaController.java
+/root/cursor-mcp-plan1/backend/src/main/java/com/yumanus/api/RecommendController.java
+/root/cursor-mcp-plan1/backend/src/main/java/com/yumanus/api/dto/TripPlan.java
+/root/cursor-mcp-plan1/backend/src/main/java/com/yumanus/api/dto/TripRequirement.java
+/root/cursor-mcp-plan1/backend/src/main/java/com/yumanus/config/WebConfig.java
+/root/cursor-mcp-plan1/backend/src/main/java/com/yumanus/tools/McpClients.java
+/root/cursor-mcp-plan1/backend/src/main/java/com/yumanus/train12306/TrainController.java

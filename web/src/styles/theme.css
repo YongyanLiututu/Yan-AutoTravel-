@@ -1,0 +1,105 @@
+:root{
+  --app-bg: linear-gradient(135deg, #ff9acb 0%, #ff7bb8 40%, #ff5ea4 70%, #ff8ad1 100%);
+  --app-bg-soft: linear-gradient(180deg, rgba(255,154,203,0.15), rgba(255,94,164,0.15));
+  --app-surface: #ffffff;
+  --app-text: #1a1a1a;
+  --app-muted: #666;
+  --app-border: rgba(255,255,255,0.35);
+  --brand: #ff5ea4;
+  --brand-strong: #ff2f8c;
+}
+
+[data-theme="dark"]{
+  --app-bg: linear-gradient(135deg, #36182a 0%, #311528 40%, #2a1122 70%, #421a31 100%);
+  --app-bg-soft: linear-gradient(180deg, rgba(255,154,203,0.08), rgba(255,94,164,0.08));
+  --app-surface: #1b1b1b;
+  --app-text: #f2f2f2;
+  --app-muted: #bbb;
+  --app-border: rgba(255,255,255,0.15);
+}
+
+html,body,#app{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  color: var(--app-text);
+  background: var(--app-bg);
+  background-attachment: fixed;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.app-shell{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: saturate(1.1) blur(0px);
+}
+
+.shell-header{
+  border-bottom: 1px solid var(--app-border);
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px) saturate(1.2);
+}
+
+.shell-header .logo{
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+
+.brand-chip{
+  background: linear-gradient(90deg, #ff6fb2, #ff2f8c);
+  color: #fff;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 12px;
+}
+
+.nav a{
+  color: #fff;
+  opacity: 0.9;
+  transition: opacity .15s ease, transform .15s ease;
+}
+.nav a.router-link-active{
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.nav a:hover{
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.shell-main{
+  flex: 1;
+  padding: 20px 16px 28px;
+}
+
+.card-glass{
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: 0 12px 30px rgba(255, 111, 178, 0.25);
+  border-radius: 12px;
+}
+
+.el-button.is-brand{
+  background: linear-gradient(90deg, #ff7bb8, #ff2f8c);
+  border: none;
+  color: #fff;
+}
+.el-button.is-brand:hover{
+  filter: brightness(1.05);
+}
+
+.page-enter-active, .page-leave-active{
+  transition: all .18s ease;
+}
+.page-enter-from, .page-leave-to{
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+

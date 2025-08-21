@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: yumanus-travel
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+  ai:
+    openai:
+      api-key: sk-3ba0922d9e1b4e3fb366a562b21cbe15     # 用你的 DashScope API Key
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      chat:
+        options:
+          model: qwen2.5-7b-instruct      # 模型名从官方支持列表中选
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+app:
+  citydataDir: ${CITYDATA_DIR:C:\\Users\\Administrator\\Desktop\\archive\\citydata}
+  mcp:
+    amap:
+      server: ${MCP_AMAP_SERVER:https://www.modelscope.cn/mcp/servers/@amap/amap-maps}
+    train12306:
+      server: ${MCP_12306_SERVER:https://www.modelscope.cn/mcp/servers/@Joooook/12306-mcp}
+    baidumap:
+      server: ${MCP_BAIDUMAP_SERVER:}
+    flight:
+      server: ${MCP_FLIGHT_SERVER:}
+
+

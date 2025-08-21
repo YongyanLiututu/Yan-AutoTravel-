@@ -1,0 +1,116 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var vue = require('vue');
+var index$2 = require('../../icon/index.js');
+var alert = require('./alert.js');
+var pluginVue_exportHelper = require('../../../_virtual/plugin-vue_export-helper.js');
+var index$1 = require('../../../hooks/use-delayed-toggle/index.js');
+var icon = require('../../../utils/vue/icon.js');
+var index = require('../../../hooks/use-namespace/index.js');
+var core = require('@vueuse/core');
+
+const __default__ = vue.defineComponent({
+  name: "ElAlert"
+});
+const _sfc_main = /* @__PURE__ */ vue.defineComponent({
+  ...__default__,
+  props: alert.alertProps,
+  emits: alert.alertEmits,
+  setup(__props, { emit }) {
+    const props = __props;
+    const { Close } = icon.TypeComponents;
+    const slots = vue.useSlots();
+    const ns = index.useNamespace("alert");
+    const visible = vue.ref(false);
+    const iconComponent = vue.computed(() => icon.TypeComponentsMap[props.type]);
+    const hasDesc = vue.computed(() => !!(props.description || slots.default));
+    const open = () => {
+      visible.value = true;
+      emit("open");
+    };
+    const close = (event) => {
+      visible.value = false;
+      emit("close", event);
+    };
+    const { onOpen, onClose } = index$1.useDelayedToggle({
+      showAfter: vue.toRef(props, "showAfter"),
+      hideAfter: vue.toRef(props, "hideAfter"),
+      autoClose: vue.toRef(props, "autoClose"),
+      open,
+      close
+    });
+    if (core.isClient) {
+      onOpen();
+    }
+    return (_ctx, _cache) => {
+      return vue.openBlock(), vue.createBlock(vue.Transition, {
+        name: vue.unref(ns).b("fade"),
+        persisted: ""
+      }, {
+        default: vue.withCtx(() => [
+          vue.withDirectives(vue.createElementVNode("div", {
+            class: vue.normalizeClass([vue.unref(ns).b(), vue.unref(ns).m(_ctx.type), vue.unref(ns).is("center", _ctx.center), vue.unref(ns).is(_ctx.effect)]),
+            role: "alert"
+          }, [
+            _ctx.showIcon && (_ctx.$slots.icon || vue.unref(iconComponent)) ? (vue.openBlock(), vue.createBlock(vue.unref(index$2.ElIcon), {
+              key: 0,
+              class: vue.normalizeClass([vue.unref(ns).e("icon"), { [vue.unref(ns).is("big")]: vue.unref(hasDesc) }])
+            }, {
+              default: vue.withCtx(() => [
+                vue.renderSlot(_ctx.$slots, "icon", {}, () => [
+                  (vue.openBlock(), vue.createBlock(vue.resolveDynamicComponent(vue.unref(iconComponent))))
+                ])
+              ]),
+              _: 3
+            }, 8, ["class"])) : vue.createCommentVNode("v-if", true),
+            vue.createElementVNode("div", {
+              class: vue.normalizeClass(vue.unref(ns).e("content"))
+            }, [
+              _ctx.title || _ctx.$slots.title ? (vue.openBlock(), vue.createElementBlock("span", {
+                key: 0,
+                class: vue.normalizeClass([vue.unref(ns).e("title"), { "with-description": vue.unref(hasDesc) }])
+              }, [
+                vue.renderSlot(_ctx.$slots, "title", {}, () => [
+                  vue.createTextVNode(vue.toDisplayString(_ctx.title), 1)
+                ])
+              ], 2)) : vue.createCommentVNode("v-if", true),
+              vue.unref(hasDesc) ? (vue.openBlock(), vue.createElementBlock("p", {
+                key: 1,
+                class: vue.normalizeClass(vue.unref(ns).e("description"))
+              }, [
+                vue.renderSlot(_ctx.$slots, "default", {}, () => [
+                  vue.createTextVNode(vue.toDisplayString(_ctx.description), 1)
+                ])
+              ], 2)) : vue.createCommentVNode("v-if", true),
+              _ctx.closable ? (vue.openBlock(), vue.createElementBlock(vue.Fragment, { key: 2 }, [
+                _ctx.closeText ? (vue.openBlock(), vue.createElementBlock("div", {
+                  key: 0,
+                  class: vue.normalizeClass([vue.unref(ns).e("close-btn"), vue.unref(ns).is("customed")]),
+                  onClick: close
+                }, vue.toDisplayString(_ctx.closeText), 3)) : (vue.openBlock(), vue.createBlock(vue.unref(index$2.ElIcon), {
+                  key: 1,
+                  class: vue.normalizeClass(vue.unref(ns).e("close-btn")),
+                  onClick: vue.unref(onClose)
+                }, {
+                  default: vue.withCtx(() => [
+                    vue.createVNode(vue.unref(Close))
+                  ]),
+                  _: 1
+                }, 8, ["class", "onClick"]))
+              ], 64)) : vue.createCommentVNode("v-if", true)
+            ], 2)
+          ], 2), [
+            [vue.vShow, visible.value]
+          ])
+        ]),
+        _: 3
+      }, 8, ["name"]);
+    };
+  }
+});
+var Alert = /* @__PURE__ */ pluginVue_exportHelper["default"](_sfc_main, [["__file", "alert.vue"]]);
+
+exports["default"] = Alert;
+//# sourceMappingURL=alert2.js.map
