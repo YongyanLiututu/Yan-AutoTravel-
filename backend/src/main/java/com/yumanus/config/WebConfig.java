@@ -1,4 +1,4 @@
-package com.Yan-AutoTravel.config;
+package com.yumanus.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

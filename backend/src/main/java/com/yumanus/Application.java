@@ -1,4 +1,4 @@
-package com.Yan-AutoTravel;
+package com.yumanus;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

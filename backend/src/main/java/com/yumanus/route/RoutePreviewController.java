@@ -1,4 +1,4 @@
-package com.Yan-AutoTravel.route;
+package com.yumanus.route;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +18,7 @@ public class RoutePreviewController {
         Map<String,String> map = new HashMap<>();
         if (req.pois()!=null){
             for (Point p: req.pois()){
-                map.put(p.id(), "�?5分钟");
+                map.put(p.id(), "约15分钟");
             }
         }
         return new PreviewResp(map);
