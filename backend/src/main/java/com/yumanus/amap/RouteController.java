@@ -1,8 +1,8 @@
-package com.Yan-AutoTravel.amap;
+package com.yumanus.amap;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.Yan-AutoTravel.tools.McpClients;
+import com.yumanus.tools.McpClients;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -19,7 +19,6 @@ public class RouteController {
 
     @PostMapping(value = "/route", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public RouteMatrixResponse route(@Valid @RequestBody RouteMatrixRequest req) {
-        // TODO: call MCP server via HTTP/WS per MCP spec; return mock for now
         RouteMatrixResponse resp = new RouteMatrixResponse();
         resp.mode = req.mode;
         resp.matrix = List.of(
@@ -33,7 +32,7 @@ public class RouteController {
         @NotEmpty
         public List<Point> points;
         @NotNull
-        public String mode; // walk/transit/drive
+        public String mode;
         public static class Point {
             public String id;
             public double lat;

@@ -1,6 +1,6 @@
-package com.Yan-AutoTravel.train12306;
+package com.yumanus.train12306;
 
-import com.Yan-AutoTravel.tools.McpClients;
+import com.yumanus.tools.McpClients;
 import jakarta.validation.constraints.NotBlank;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +18,6 @@ public class TrainController {
                                       @RequestParam @NotBlank String to,
                                       @RequestParam @NotBlank String date,
                                       @RequestParam(defaultValue = "fast") String prefer) {
-        // TODO call MCP 12306 server; return mock
         TrainSearchResponse r = new TrainSearchResponse();
         r.server = mcp.getTrainServer();
         r.items = List.of(new TrainItem("G123", from, to, date, 130, 350.0));

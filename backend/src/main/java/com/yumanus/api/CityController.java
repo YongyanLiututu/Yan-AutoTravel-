@@ -1,4 +1,4 @@
-package com.Yan-AutoTravel.api;
+package com.yumanus.api;
 
 import org.springframework.web.bind.annotation.*;
 

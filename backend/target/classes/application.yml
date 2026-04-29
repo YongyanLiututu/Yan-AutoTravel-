@@ -9,7 +9,7 @@ spring:
       WRITE_DATES_AS_TIMESTAMPS: false
   ai:
     openai:
-      api-key: sk-3ba0922d9e1b4e3fb366a562b21cbe15     # 用你的 DashScope API Key
+      api-key: sk-    # 用你的 DashScope API Key
       base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
       chat:
         options:

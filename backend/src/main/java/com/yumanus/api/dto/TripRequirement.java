@@ -1,4 +1,4 @@
-package com.Yan-AutoTravel.api.dto;
+package com.yumanus.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonSetter;
@@ -36,13 +36,13 @@ public class TripRequirement {
     @JsonSetter(nulls = Nulls.SKIP)
     private Constraints constraints = new Constraints();
 
-    // ----- 内部�?-----
+    // ----- 内部�?-----
 
     public static class Party {
         @Min(0) private int adults;
         @Min(0) private int kids;
 
-        public Party() {                 // 默认值，避免�?null �?0/负导致校验不通过
+        public Party() {                 // 默认值，避免�?null �?0/负导致校验不通过
             this.adults = 2;
             this.kids = 0;
         }
@@ -57,7 +57,7 @@ public class TripRequirement {
         @NotBlank private String currency;
         @Min(0) private long total;
 
-        public Budget() {                // 默认值，避免�?null 触发 @NotNull/@NotBlank
+        public Budget() {                // 默认值，避免�?null 触发 @NotNull/@NotBlank
             this.currency = "CNY";
             this.total = 3000;
         }
