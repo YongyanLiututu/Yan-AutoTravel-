@@ -1,4 +1,4 @@
-package com.Yan-AutoTravel.api.dto;
+package com.yumanus.api.dto;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

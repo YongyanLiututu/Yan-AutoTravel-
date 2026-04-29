@@ -1,8 +1,8 @@
-package com.Yan-AutoTravel.api;
+package com.yumanus.api;
 
-import com.Yan-AutoTravel.agent.PlannerService;
-import com.Yan-AutoTravel.api.dto.TripPlan;
-import com.Yan-AutoTravel.api.dto.TripRequirement;
+import com.yumanus.agent.PlannerService;
+import com.yumanus.api.dto.TripPlan;
+import com.yumanus.api.dto.TripRequirement;
 import jakarta.validation.Valid;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

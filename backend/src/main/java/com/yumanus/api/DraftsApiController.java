@@ -1,4 +1,4 @@
-package com.Yan-AutoTravel.api;
+package com.yumanus.api;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +13,7 @@ public class DraftsApiController {
         public String id;
         public String city;
         public Integer days;
-        public String budget; // low/mid/high
+        public String budget;
         public List<String> themes;
         public long createdAt;
         public DraftMeta(){}
